@@ -1,0 +1,8 @@
+export enum UserRole {
+  ADMIN = "ADMIN",
+  ASSET_MANAGER = "ASSET_MANAGER",
+  DEPARTMENT_HEAD = "DEPARTMENT_HEAD",
+  EMPLOYEE = "EMPLOYEE",
+}
+
+export const DEFAULT_ROLE = UserRole.EMPLOYEE;
