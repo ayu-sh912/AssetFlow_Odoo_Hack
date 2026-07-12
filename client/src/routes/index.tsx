@@ -10,16 +10,19 @@ import MaintenancePage from "../pages/maintenance/MaintenancePage";
 import AuditPage from "../pages/audit/AuditPage";
 import ReportsPage from "../pages/reports/ReportsPage";
 import NotificationsPage from "../pages/notifications/NotificationsPage";
-
+import RegisterPage from "../pages/auth/RegisterPage";
 import AppLayout from "../layouts/AppLayout";
-
+import ProtectedRoute from "./ProtectedRoute";
 export default function AppRoutes() {
     return (
         <Routes>
 
             <Route path="/login" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} />
 
-            <Route element={<AppLayout />}>
+            <Route element={<ProtectedRoute />}>
+
+                <Route element={<AppLayout />}>
 
                 <Route path="/" element={<Navigate to="/dashboard" replace />} />
 
@@ -46,6 +49,7 @@ export default function AppRoutes() {
 
             </Route>
 
+        </Route>
         </Routes>
     );
 }
