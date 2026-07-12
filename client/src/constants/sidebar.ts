@@ -1,59 +1,69 @@
 import {
-  FaChartPie,
-  FaBuilding,
-  FaBoxOpen,
-  FaExchangeAlt,
-  FaCalendarAlt,
-  FaTools,
-  FaClipboardCheck,
-  FaChartBar,
-  FaBell,
-} from "react-icons/fa";
+    LayoutDashboard,
+    Building2,
+    Boxes,
+    ArrowRightLeft,
+    CalendarDays,
+    Wrench,
+    ClipboardCheck,
+    BarChart3,
+    Bell,
+} from "lucide-react";
 
-export const sidebarItems = [
-  {
-    title: "Dashboard",
-    icon: FaChartPie,
-    path: "/dashboard",
-  },
-  {
-    title: "Organization Setup",
-    icon: FaBuilding,
-    path: "/organization",
-  },
-  {
-    title: "Assets",
-    icon: FaBoxOpen,
-    path: "/assets",
-  },
-  {
-    title: "Allocation",
-    icon: FaExchangeAlt,
-    path: "/allocation",
-  },
-  {
-    title: "Booking",
-    icon: FaCalendarAlt,
-    path: "/booking",
-  },
-  {
-    title: "Maintenance",
-    icon: FaTools,
-    path: "/maintenance",
-  },
-  {
-    title: "Audit",
-    icon: FaClipboardCheck,
-    path: "/audit",
-  },
-  {
-    title: "Reports",
-    icon: FaChartBar,
-    path: "/reports",
-  },
-  {
-    title: "Notifications",
-    icon: FaBell,
-    path: "/notifications",
-  },
+import type { SidebarItemType } from "@/types/navigation";
+
+export const SIDEBAR_ITEMS: SidebarItemType[] = [
+    {
+        title: "Dashboard",
+        icon: LayoutDashboard,
+        path: "/dashboard",
+    },
+
+    {
+        title: "Organization Setup",
+        icon: Building2,
+        path: "/organization",
+    },
+
+    {
+        title: "Assets",
+        icon: Boxes,
+        path: "/assets",
+    },
+
+    {
+        title: "Allocation & Transfer",
+        icon: ArrowRightLeft,
+        path: "/allocation",
+    },
+
+    {
+        title: "Resource Booking",
+        icon: CalendarDays,
+        path: "/booking",
+    },
+
+    {
+        title: "Maintenance",
+        icon: Wrench,
+        path: "/maintenance",
+    },
+
+    {
+        title: "Audit",
+        icon: ClipboardCheck,
+        path: "/audit",
+    },
+
+    {
+        title: "Reports",
+        icon: BarChart3,
+        path: "/reports",
+    },
+
+    {
+        title: "Notifications",
+        icon: Bell,
+        path: "/notifications",
+    },
 ];

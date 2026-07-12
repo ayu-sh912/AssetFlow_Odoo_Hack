@@ -1,61 +1,54 @@
 import {
-  Menu,
-  Bell,
-  Search,
-  Sun,
-  Moon,
-} from "lucide-react";
-import { useState } from "react";
+  FiBell,
+  FiMenu,
+  FiSearch,
+} from "react-icons/fi";
 
-export default function TopNavbar() {
-  const [darkMode, setDarkMode] = useState(false);
+interface TopNavbarProps {
+  onMenuClick: () => void;
+}
 
+export default function TopNavbar({
+  onMenuClick,
+}: TopNavbarProps) {
   return (
-    <header className="h-16 border-b border-slate-200 bg-white flex items-center justify-between px-6">
+    <header className="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-6">
 
-      {/* Left */}
+      {/* LEFT */}
 
       <div className="flex items-center gap-4">
 
-        <button className="rounded-lg border border-slate-200 p-2 hover:bg-slate-100 transition">
-
-          <Menu size={20} />
-
+        <button
+          onClick={onMenuClick}
+          className="lg:hidden p-2 rounded-lg hover:bg-slate-100"
+        >
+          <FiMenu size={22} />
         </button>
 
-        <div className="relative">
+        <div className="relative hidden md:block">
 
-          <Search
-            size={18}
-            className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"
+          <FiSearch
+            className="absolute left-3 top-3 text-slate-400"
           />
 
           <input
-            type="text"
-            placeholder="Search..."
-            className="w-80 rounded-xl border border-slate-200 bg-slate-50 py-2 pl-10 pr-4 outline-none focus:ring-2 focus:ring-emerald-500"
+            placeholder="Search assets..."
+            className="w-80 rounded-xl border border-slate-300 py-2 pl-10 pr-4 outline-none focus:ring-2 focus:ring-emerald-500"
           />
 
         </div>
 
       </div>
 
-      {/* Right */}
+      {/* RIGHT */}
 
       <div className="flex items-center gap-5">
 
-        <button
-          onClick={() => setDarkMode(!darkMode)}
-          className="rounded-lg border border-slate-200 p-2 hover:bg-slate-100 transition"
-        >
-          {darkMode ? <Sun size={18} /> : <Moon size={18} />}
-        </button>
+        <button className="relative">
 
-        <button className="relative rounded-lg border border-slate-200 p-2 hover:bg-slate-100 transition">
+          <FiBell size={22} />
 
-          <Bell size={18} />
-
-          <span className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-[10px] text-white">
+          <span className="absolute -top-2 -right-2 h-5 w-5 rounded-full bg-red-500 text-white text-xs flex items-center justify-center">
             3
           </span>
 
@@ -63,18 +56,18 @@ export default function TopNavbar() {
 
         <div className="flex items-center gap-3">
 
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-500 font-semibold text-white">
-            A
+          <div className="w-10 h-10 rounded-full bg-emerald-500 flex items-center justify-center text-white font-semibold">
+            AA
           </div>
 
-          <div>
+          <div className="hidden md:block">
 
-            <h4 className="text-sm font-semibold">
+            <p className="font-semibold text-sm">
               Ayush Agrawal
-            </h4>
+            </p>
 
             <p className="text-xs text-slate-500">
-              Frontend Developer
+              Team Leader
             </p>
 
           </div>
