@@ -5,7 +5,8 @@ import compression from "compression";
 import cookieParser from "cookie-parser";
 import morgan from "morgan";
 
-import { env } from "./config/env";
+import { env } from "./config/env.js";
+import { errorHandler } from "./middlewares/error.middleware.js";
 
 const app = express();
 
@@ -35,4 +36,5 @@ app.get("/", (_, res) => {
   });
 });
 
+app.use(errorHandler);
 export default app;
